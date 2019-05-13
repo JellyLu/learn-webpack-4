@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "React Awesome"
+      template: './src/index.template.html'
     })
   ]
 };
