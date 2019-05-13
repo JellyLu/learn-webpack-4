@@ -1,3 +1,3 @@
-import css from './app.css';
+import css from './app.scss';
 
 console.log('hello webpack');
