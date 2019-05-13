@@ -4,6 +4,12 @@ module.exports = {
   output: {
     filename: './app.bundle.js'
   },
+  module:  {
+    rules: [{
+      test: /\.css/,
+      use: ['style-loader', 'css-loader']
+    }]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.template.html',
