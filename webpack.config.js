@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: './src/app.js',
   output: {
@@ -7,7 +8,9 @@ module.exports = {
   module:  {
     rules: [{
       test: /\.scss/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
+      use: [{
+        loader: MiniCssExtractPlugin.loader,
+      }, 'css-loader', 'sass-loader']
     }]
   },
   plugins: [
@@ -17,6 +20,9 @@ module.exports = {
         collapseWhitespace: true,
       },
       hash: true,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[contenthash].css'
     })
   ]
 };
