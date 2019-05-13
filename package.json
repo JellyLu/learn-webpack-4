@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --entry ./src/app.js --output ./dist/app.bundle.js",
+    "build": "webpack",
+    "dev": "webpack -d --watch",
+    "prod": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "JellyLu",
