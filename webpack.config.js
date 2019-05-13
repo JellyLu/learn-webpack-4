@@ -6,7 +6,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.template.html'
+      template: './src/index.template.html',
+      minify: {
+        collapseWhitespace: true,
+      },
+      hash: true,
     })
   ]
 };
