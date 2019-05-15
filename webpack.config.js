@@ -5,6 +5,10 @@ module.exports = {
   output: {
     filename: './app.bundle.js'
   },
+  devServer: {
+    port: 9000,
+    open: true
+  },
   module:  {
     rules: [{
       test: /\.scss/,
@@ -17,7 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.template.html',
       minify: {
-        collapseWhitespace: true,
+        collapseWhitespace: false,
       },
       hash: true,
     }),
