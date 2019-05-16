@@ -1,6 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    'app.bundle': './src/app.js'
+  },
   output: {
     filename: '[name].[chunkhash].js'
   },
@@ -28,6 +32,7 @@ module.exports = {
       minify: {
         collapseWhitespace: false,
       },
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 };
