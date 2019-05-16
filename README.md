@@ -31,15 +31,15 @@ Webpack(v4.31.0)
 	```
 	//webpack.config.js
 	const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
-	  entry: './src/app.js',
-	  output: {
-	    filename: './app.bundle.js'
-	  },
-	  plugins: [
-	    new HtmlWebpackPlugin({title: "React Awesome"})
-	  ]
-};
+	module.exports = {
+		  entry: './src/app.js',
+		  output: {
+		    filename: './app.bundle.js'
+		  },
+		  plugins: [
+		    new HtmlWebpackPlugin({title: "React Awesome"})
+		  ]
+	};
 	```
 	
 	```
@@ -246,38 +246,38 @@ module.exports = {
 	```
 	// webpack.config.js
 	const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-module.exports = {
-	  entry: './src/app.js',
-	  output: {
-	    filename: './app.bundle.js'
-	  },
-	  module:  {
-	    rules: [{
-	      test: /\.scss/,
-	      use: [{
-	        loader: MiniCssExtractPlugin.loader,
-	      }, 'css-loader', 'sass-loader'] //remove style-loader
-	    }]
-	  },
-	  plugins: [
-	    new HtmlWebpackPlugin({
-	      template: './src/index.template.html',
-	      minify: {
-	        collapseWhitespace: false,
-	      },
-	      hash: true,
-	    }),
-	    new MiniCssExtractPlugin({
-	      filename: '[contenthash].css'
-	    })
-	  ]
-};
+	const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+	module.exports = {
+		  entry: './src/app.js',
+		  output: {
+		    filename: './app.bundle.js'
+		  },
+		  module:  {
+		    rules: [{
+		      test: /\.scss/,
+		      use: [{
+			loader: MiniCssExtractPlugin.loader,
+		      }, 'css-loader', 'sass-loader'] //remove style-loader
+		    }]
+		  },
+		  plugins: [
+		    new HtmlWebpackPlugin({
+		      template: './src/index.template.html',
+		      minify: {
+			collapseWhitespace: false,
+		      },
+		      hash: true,
+		    }),
+		    new MiniCssExtractPlugin({
+		      filename: '[contenthash].css'
+		    })
+		  ]
+	};
 	```
 	
 	```
 	// dist/index.html
-<!DOCTYPE html>
+	<!DOCTYPE html>
 	<html>
 	<head>
 	    <meta charset="UTF-8">
@@ -306,37 +306,37 @@ module.exports = {
 	
 	```
 	const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-module.exports = {
-	  entry: './src/app.js',
-	  output: {
-	    filename: './app.bundle.js'
-	  },
-	  devServer: {
-	    port: 9000,
-	    open: true
-	  },
-	  module:  {
-	    rules: [{
-	      test: /\.scss/,
-	      use: [{
-	        loader: MiniCssExtractPlugin.loader,
-	      }, 'css-loader', 'sass-loader']
-	    }]
-	  },
-	  plugins: [
-	    new HtmlWebpackPlugin({
-	      template: './src/index.template.html',
-	      minify: {
-	        collapseWhitespace: false,
-	      },
-	      hash: true,
-	    }),
-	    new MiniCssExtractPlugin({
-	      filename: '[contenthash].css'
-	    })
-	  ]
-};
+	const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+	module.exports = {
+		  entry: './src/app.js',
+		  output: {
+		    filename: './app.bundle.js'
+		  },
+		  devServer: {
+		    port: 9000,
+		    open: true
+		  },
+		  module:  {
+		    rules: [{
+		      test: /\.scss/,
+		      use: [{
+			loader: MiniCssExtractPlugin.loader,
+		      }, 'css-loader', 'sass-loader']
+		    }]
+		  },
+		  plugins: [
+		    new HtmlWebpackPlugin({
+		      template: './src/index.template.html',
+		      minify: {
+			collapseWhitespace: false,
+		      },
+		      hash: true,
+		    }),
+		    new MiniCssExtractPlugin({
+		      filename: '[contenthash].css'
+		    })
+		  ]
+	};
 	```
 
 - use webpack and babel to config react development environment
@@ -384,39 +384,39 @@ module.exports = {
 	```
 	// webpack.config.js
 	const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
-	  entry: './src/app.js',
-	  output: {
-	    filename: './app.bundle.js'
-	  },
-	  devServer: {
-	    port: 9000,
-	    open: true
-	  },
-	  module:  {
-	    rules: [{
-	      test: /\.scss/,
-	      use: ['style-loader', 'css-loader', 'sass-loader']
-	    }, {
-	      test: /\.jsx$/,
-	      loader: 'babel-loader',
-	      exclude: /node_modules/,
-	    }, {
-	        test: /\.js$/,
-	        loader: 'babel-loader',
-	        exclude: /node_modules/,
-	    }]
-	  },
-	  plugins: [
-	    new HtmlWebpackPlugin({
-	      template: './src/index.template.html',
-	      minify: {
-	        collapseWhitespace: false,
-	      },
-	      hash: true,
-	    })
-	  ]
-};
+	module.exports = {
+		  entry: './src/app.js',
+		  output: {
+		    filename: './app.bundle.js'
+		  },
+		  devServer: {
+		    port: 9000,
+		    open: true
+		  },
+		  module:  {
+		    rules: [{
+		      test: /\.scss/,
+		      use: ['style-loader', 'css-loader', 'sass-loader']
+		    }, {
+		      test: /\.jsx$/,
+		      loader: 'babel-loader',
+		      exclude: /node_modules/,
+		    }, {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			exclude: /node_modules/,
+		    }]
+		  },
+		  plugins: [
+		    new HtmlWebpackPlugin({
+		      template: './src/index.template.html',
+		      minify: {
+			collapseWhitespace: false,
+		      },
+		      hash: true,
+		    })
+		  ]
+	};
 	```
 	
 - CleanWebpackPlugin
