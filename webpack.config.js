@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/app.js',
   output: {
-    filename: './app.bundle.js'
+    filename: '[name].[chunkhash].js'
   },
   devServer: {
     port: 9000,
@@ -28,7 +28,6 @@ module.exports = {
       minify: {
         collapseWhitespace: false,
       },
-      hash: true,
     })
   ]
 };
