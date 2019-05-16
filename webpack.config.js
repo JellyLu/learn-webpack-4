@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -6,11 +7,12 @@ module.exports = {
     'app.bundle': './src/app.js'
   },
   output: {
-    filename: '[name].[chunkhash].js'
+    filename: '[name].[hash].js'
   },
   devServer: {
     port: 9000,
-    open: true
+    open: true,
+    hot: true,
   },
   module:  {
     rules: [{
@@ -33,6 +35,8 @@ module.exports = {
         collapseWhitespace: false,
       },
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };
